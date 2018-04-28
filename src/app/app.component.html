@@ -1,1 +1,5 @@
-<app-dynamic-component-input [personList]="arrayDatos"></app-dynamic-component-input>
+<app-person-list [personList]="personList" (deletePerson)="deletePerson($event)"></app-person-list>
+
+<app-test-view-child></app-test-view-child>
+
+<app-test-model></app-test-model>

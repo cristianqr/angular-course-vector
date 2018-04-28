@@ -1,0 +1,16 @@
+.group-box{
+  margin-top: 30px;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.group-box__header{
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background-color: #fff;
+}
+
+.group-box__body{
+  padding: 10px;
+}

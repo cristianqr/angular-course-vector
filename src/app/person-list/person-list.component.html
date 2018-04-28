@@ -1,0 +1,35 @@
+<app-group-box>
+  <div class="header">
+    Datos Generales <button>-</button>
+  </div>
+  <div class="body">
+    <table class="data-table" border="1">
+      <thead>
+      <tr>
+        <th>Nro.</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let person of personList; let par = even; let inpar = odd; let indice = index" [ngClass]="{'row-par': par}">
+        <td>{{indice + 1}}</td>
+        <td>{{person.name}}</td>
+        <td>{{person.lastName}}</td>
+        <td>{{person.age}}</td>
+        <td>{{person.state}}</td>
+        <td>
+          <button (click)="deletePerson.emit(person)" class="btn btn-primary btn-danger btn-sm" *ngIf="person.state === 'activo'; else active">Eliminar</button>
+          <ng-template #active>
+            <button (click)="deletePerson.emit(person)" class="btn btn-primary btn-sm">Activar</button>
+            <button (click)="deletePerson.emit(person)" class="btn btn-primary btn-sm">Suspender</button>
+          </ng-template>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</app-group-box>

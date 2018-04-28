@@ -1,0 +1,16 @@
+.data-table{
+  width: 100%;
+}
+
+.data-table thead tr{
+  border-bottom: 4px solid #cccccc;
+  border-top: 4px solid #cccccc;
+}
+
+.data-table tbody tr{
+  border-bottom: 1px solid #cccccc;
+}
+
+.row-par{
+  background-color: #090;
+}

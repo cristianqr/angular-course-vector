@@ -18,4 +18,12 @@ export class AppComponent {
   deletePerson (person: Person) {
     this.personList = this.personList.filter((item) => item.personId !== person.personId);
   }
+
+  afterSelectPhoto (photo) {
+    console.log(photo);
+  }
+
+  afterSelectHv (hv) {
+    console.log(hv);
+  }
 }

@@ -1,5 +1,9 @@
-<app-person-list [personList]="personList" (deletePerson)="deletePerson($event)"></app-person-list>
+<!--<app-person-list [personList]="personList" (deletePerson)="deletePerson($event)"></app-person-list>-->
+<input type="file">
 
-<app-test-view-child></app-test-view-child>
+<button appAttachFile (afterSelect)="afterSelectPhoto($event)">Adjuntar Foto</button>
 
-<app-test-model></app-test-model>
+<a href="#" appAttachFile (afterSelect)="afterSelectHv($event)">Selecionar HV</a>
+
+<input type="text" upperCase>
+

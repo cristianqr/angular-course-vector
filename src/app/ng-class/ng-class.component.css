@@ -1,0 +1,15 @@
+.border-red {
+  border: 5px solid #FF0000;
+}
+
+.bgc-red {
+  background-color: #FF0000;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.border-green {
+  border: 5px solid #009900;
+}

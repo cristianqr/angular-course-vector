@@ -11,6 +11,10 @@ import { GroupBoxComponent } from './shared/group-box/group-box.component';
 import { TestViewChildComponent } from './test-view-child/test-view-child.component';
 import { TestModelComponent } from './test-model/test-model.component';
 import {FormsModule} from '@angular/forms';
+import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgStyleComponent } from './ng-style/ng-style.component';
+import { BasicDirective } from './shared/directives/basic.directive';
+import { AttachFileDirective } from './shared/directives/attach-file.directive';
 
 
 @NgModule({
@@ -22,7 +26,11 @@ import {FormsModule} from '@angular/forms';
     PersonListComponent,
     GroupBoxComponent,
     TestViewChildComponent,
-    TestModelComponent
+    TestModelComponent,
+    NgClassComponent,
+    NgStyleComponent,
+    BasicDirective,
+    AttachFileDirective
   ],
   imports: [
     BrowserModule,

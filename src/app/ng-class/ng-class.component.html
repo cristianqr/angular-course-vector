@@ -1,0 +1,13 @@
+<div [className]="borderRed">Texto con borde rojo</div><br>
+
+<div [className]="withBorderRed ? 'border-red': ''">Texto con borde rojo condicional</div><br>
+
+
+<div [class.border-red]="withBorderRed">Texto con borde rojo condicional</div><br>
+
+<div [ngClass]="'bgc-red'">Texto con fondo rojo</div><br>
+
+<div [ngClass]="['bgc-red', 'text-white', 'border-green']">Texto con varios estilos</div>
+
+<input type="checkbox" [(ngModel)]="gender"> tiene genero
+<div [ngClass]="boxProperty">Esto es una caja</div>

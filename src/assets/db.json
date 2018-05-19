@@ -1,0 +1,11 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "name": "Carla",
+      "lastName": "Perez Puma",
+      "age": 25, "state": "activo",
+      "profile": "a jdfkasd f ajkdf jadjfk dkfjk ajfkjkasdj fkadkfjasd fkjad kfj k"
+    }
+  ]
+}

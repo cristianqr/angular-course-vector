@@ -4,4 +4,5 @@ export interface Person {
   lastName: string;
   age: number;
   state: string;
+  profile: string;
 }

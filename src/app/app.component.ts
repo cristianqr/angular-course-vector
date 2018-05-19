@@ -1,6 +1,8 @@
 
 import {Component} from '@angular/core';
 import { Person } from './models/person.model';
+import {HttpClient} from '@angular/common/http';
+import {PeopleService} from './shared/services/people.service';
 
 @Component({
   selector: 'app-base',
@@ -9,21 +11,30 @@ import { Person } from './models/person.model';
 })
 export class AppComponent {
   title = 'Hello';
-  personList: Person[] = [
-    {personId: 1, name: 'Carla', lastName: 'Perez Puma', age: 25, state: 'activo'},
-    {personId: 2, name: 'Pedro', lastName: 'Hurtado Cark', age: 30, state: 'inactivo'},
-    {personId: 3, name: 'aaaaa', lastName: 'aaa aaaa', age: 26, state: 'activo'}
-  ];
+  personList: Person[] = [];
 
-  deletePerson (person: Person) {
+  constructor (private peopleService: PeopleService) {
+    this.peopleService.listPerson().subscribe(people => {
+      this.personList = people;
+    });
+  }
+
+   deletePerson (person: Person) {
     this.personList = this.personList.filter((item) => item.personId !== person.personId);
   }
 
-  afterSelectPhoto (photo) {
-    console.log(photo);
-  }
-
-  afterSelectHv (hv) {
-    console.log(hv);
+  savePerson () {
+    const newPerson = {
+      'name': 'bbbbbb',
+      'lastName': 'bbbb bbbb',
+      'age': 18,
+      'state': 'Inactivo',
+      'profile': 'aaa a aa a a a a a a a a a a a a a a a a a  a'
+    };
+    this.peopleService.savePerson(newPerson).subscribe(person => {
+      this.personList.push(person);
+    }, (error) => {
+      console.log(error);
+    });
   }
 }

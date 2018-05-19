@@ -1,0 +1,28 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "name": "Carla",
+      "lastName": "Perez Pumaaaaa",
+      "age": 25,
+      "state": "activo",
+      "profile": "a jdfkasd f ajkdf jadjfk dkfjk ajfkjkasdj fkadkfjasd fkjad kfj k"
+    },
+    {
+      "name": "Maria",
+      "lastName": "Ramos Peralta",
+      "age": 18,
+      "state": "Inactivo",
+      "profile": "aaa a aa a a a a a a a a a a a a a a a a a  a",
+      "id": 2
+    },
+    {
+      "name": "bbbbbb",
+      "lastName": "bbbb bbbb",
+      "age": 18,
+      "state": "Inactivo",
+      "profile": "aaa a aa a a a a a a a a a a a a a a a a a  a",
+      "id": 3
+    }
+  ]
+}

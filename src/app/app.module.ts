@@ -15,6 +15,9 @@ import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { BasicDirective } from './shared/directives/basic.directive';
 import { AttachFileDirective } from './shared/directives/attach-file.directive';
+import {FullnamePipe} from './shared/pipes/fullname.pipe';
+import {HttpClientModule} from '@angular/common/http';
+import {PeopleService} from './shared/services/people.service';
 
 
 @NgModule({
@@ -30,13 +33,15 @@ import { AttachFileDirective } from './shared/directives/attach-file.directive';
     NgClassComponent,
     NgStyleComponent,
     BasicDirective,
-    AttachFileDirective
+    AttachFileDirective,
+    FullnamePipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [FullnamePipe, PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

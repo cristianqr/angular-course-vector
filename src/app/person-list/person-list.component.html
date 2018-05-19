@@ -7,20 +7,20 @@
       <thead>
       <tr>
         <th>Nro.</th>
-        <th>Nombres</th>
-        <th>Apellidos</th>
+        <th>Apellidos y Nombres</th>
         <th>Edad</th>
         <th>Estado</th>
+        <th>Perfil</th>
         <th>Acciones</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let person of personList; let par = even; let inpar = odd; let indice = index" [ngClass]="{'row-par': par}">
         <td>{{indice + 1}}</td>
-        <td>{{person.name}}</td>
-        <td>{{person.lastName}}</td>
+        <td>{{person | appFullName:'---------'}}</td>
         <td>{{person.age}}</td>
         <td>{{person.state}}</td>
+        <td>{{person.profile}}</td>
         <td>
           <button (click)="deletePerson.emit(person)" class="btn btn-primary btn-danger btn-sm" *ngIf="person.state === 'activo'; else active">Eliminar</button>
           <ng-template #active>

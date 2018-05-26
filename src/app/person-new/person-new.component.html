@@ -1,19 +1,30 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="alert-danger">
+    <div *ngIf="name.errors?.required && name.touched" class="error">
+      El nombre es un campo requerido
+    </div>
+
+    <div *ngIf="lastName.errors?.required && lastName.touched" class="error">
+      El Apellido es un campo requerido
+    </div>
+  </div>
   <div class="row">
     <div class="col-6">
       <div class="form-group">
         <label>Nombres</label>
-        <input type="text" class="form-control" name="name" ngModel>
+        <input type="text" class="form-control" name="name" ngModel #name="ngModel" required>
+
+
       </div>
 
       <div class="form-group">
         <label>Apellidos</label>
-        <input type="text" class="form-control" name="lastName" ngModel>
+        <input type="text" class="form-control" name="lastName" ngModel #lastName="ngModel" required>
       </div>
 
       <div class="form-group">
         <label>Edad</label>
-        <input type="text" class="form-control" name="age" ngModel>
+        <input type="text" class="form-control" name="age" ngModel #age="ngModel" required [class.input-error]="age.errors?.required && age.touched">
       </div>
 
 
@@ -32,6 +43,5 @@
       </div>
     </div>
   </div>
-  {{f.value | json}}
 </form>
 

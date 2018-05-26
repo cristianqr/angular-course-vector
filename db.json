@@ -2,11 +2,11 @@
   "people": [
     {
       "id": 1,
-      "name": "Carla",
-      "lastName": "Perez Pumaaaaa",
+      "name": "Carla 1",
+      "lastName": "Perez Puma",
       "age": 25,
       "state": "activo",
-      "profile": "a jdfkasd f ajkdf jadjfk dkfjk ajfkjkasdj fkadkfjasd fkjad kfj k"
+      "profile": "Programador web en joomla"
     },
     {
       "name": "Maria",

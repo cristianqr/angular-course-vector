@@ -20,7 +20,7 @@ export class AppComponent {
   }
 
    deletePerson (person: Person) {
-    this.personList = this.personList.filter((item) => item.personId !== person.personId);
+    this.personList = this.personList.filter((item) => item.id !== person.id);
   }
 
   savePerson () {
@@ -35,6 +35,23 @@ export class AppComponent {
       this.personList.push(person);
     }, (error) => {
       console.log(error);
+    });
+  }
+
+  updatePerson () {
+    const updatePerson: Person = {
+      id: 1,
+      name: 'Carla 1',
+      lastName: 'Perez Puma',
+      age: 25,
+      state: 'activo',
+      profile: 'Programador web en joomla'
+    };
+
+    this.peopleService.updatePerson(updatePerson).subscribe(person => {
+      this.personList = this.personList.map(item => {
+        return (item.id === person.id) ? person : item;
+      });
     });
   }
 }

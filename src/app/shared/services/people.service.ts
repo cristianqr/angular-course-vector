@@ -13,4 +13,7 @@ export class PeopleService {
   savePerson(person): Observable<Person> {
     return this.http.post<Person>('/api/people', person);
   }
+  updatePerson(person: Person): Observable<Person> {
+    return this.http.put<Person>(`/api/people/${person.id}`, person);
+  }
 }

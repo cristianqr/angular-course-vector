@@ -1,4 +1,3 @@
-<button (click)="savePerson()">Registrar Nuevo</button>
-<button (click)="updatePerson()">Actualizar</button>
+<app-person-new (save)="savePerson($event)"></app-person-new>
 <app-person-list [personList]="personList" (deletePerson)="deletePerson($event)"></app-person-list>
 

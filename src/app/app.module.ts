@@ -18,6 +18,7 @@ import { AttachFileDirective } from './shared/directives/attach-file.directive';
 import {FullnamePipe} from './shared/pipes/fullname.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {PeopleService} from './shared/services/people.service';
+import { PersonNewComponent } from './person-new/person-new.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {PeopleService} from './shared/services/people.service';
     NgStyleComponent,
     BasicDirective,
     AttachFileDirective,
-    FullnamePipe
+    FullnamePipe,
+    PersonNewComponent
   ],
   imports: [
     BrowserModule,

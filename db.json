@@ -1,14 +1,6 @@
 {
   "people": [
     {
-      "id": 1,
-      "name": "Carla 1",
-      "lastName": "Perez Puma",
-      "age": 25,
-      "state": "activo",
-      "profile": "Programador web en joomla"
-    },
-    {
       "name": "Maria",
       "lastName": "Ramos Peralta",
       "age": 18,
@@ -23,6 +15,30 @@
       "state": "Inactivo",
       "profile": "aaa a aa a a a a a a a a a a a a a a a a a  a",
       "id": 3
+    },
+    {
+      "name": "bbbbbb",
+      "lastName": "bbbb bbbb",
+      "age": 18,
+      "state": "Inactivo",
+      "profile": "aaa a aa a a a a a a a a a a a a a a a a a  a",
+      "id": 4
+    },
+    {
+      "name": "vvvvv",
+      "lastName": "vv vvvv",
+      "age": 18,
+      "state": "Activo",
+      "profile": "aaa a aa a a a a a a a a a a a a a a a a a  a",
+      "id": 5
+    },
+    {
+      "name": "clauidio",
+      "lastName": "velasques",
+      "age": "21",
+      "state": "activo",
+      "profile": "backend developer",
+      "id": 6
     }
   ]
 }

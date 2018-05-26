@@ -14,23 +14,22 @@ export class AppComponent {
   personList: Person[] = [];
 
   constructor (private peopleService: PeopleService) {
+    this.listPerson();
+  }
+
+  listPerson () {
     this.peopleService.listPerson().subscribe(people => {
       this.personList = people;
     });
   }
 
    deletePerson (person: Person) {
-    this.personList = this.personList.filter((item) => item.id !== person.id);
+    this.peopleService.deletePerson(person.id).subscribe(res => {
+      this.personList = this.personList.filter((item) => item.id !== person.id);
+    });
   }
 
-  savePerson () {
-    const newPerson = {
-      'name': 'bbbbbb',
-      'lastName': 'bbbb bbbb',
-      'age': 18,
-      'state': 'Inactivo',
-      'profile': 'aaa a aa a a a a a a a a a a a a a a a a a  a'
-    };
+  savePerson (newPerson: Person) {
     this.peopleService.savePerson(newPerson).subscribe(person => {
       this.personList.push(person);
     }, (error) => {

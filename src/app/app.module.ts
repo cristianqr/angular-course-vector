@@ -10,7 +10,7 @@ import { PersonListComponent } from './person-list/person-list.component';
 import { GroupBoxComponent } from './shared/group-box/group-box.component';
 import { TestViewChildComponent } from './test-view-child/test-view-child.component';
 import { TestModelComponent } from './test-model/test-model.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { BasicDirective } from './shared/directives/basic.directive';
@@ -19,6 +19,7 @@ import {FullnamePipe} from './shared/pipes/fullname.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {PeopleService} from './shared/services/people.service';
 import { PersonNewComponent } from './person-new/person-new.component';
+import { PersonEditComponent } from './person-edit/person-edit.component';
 
 
 @NgModule({
@@ -36,11 +37,13 @@ import { PersonNewComponent } from './person-new/person-new.component';
     BasicDirective,
     AttachFileDirective,
     FullnamePipe,
-    PersonNewComponent
+    PersonNewComponent,
+    PersonEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [FullnamePipe, PeopleService],

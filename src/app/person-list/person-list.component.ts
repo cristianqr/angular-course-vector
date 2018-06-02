@@ -11,6 +11,8 @@ import {PeopleService} from '../shared/services/people.service';
 export class PersonListComponent implements OnInit {
   @Input() personList: Person[];
   @Output() deletePerson = new EventEmitter<any>();
+  @Output() editPerson = new EventEmitter<any>();
+
   constructor( private fullNamePipe: FullnamePipe) { }
 
   ngOnInit() {

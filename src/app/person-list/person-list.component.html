@@ -23,6 +23,7 @@
         <td>{{person.profile}}</td>
         <td>
           <button (click)="deletePerson.emit(person)" class="btn btn-primary btn-danger btn-sm" *ngIf="person.state === 'activo'; else active">Eliminar</button>
+          <button (click)="editPerson.emit(person)" class="btn btn-primary btn-danger btn-sm">Editar</button>
           <ng-template #active>
             <button (click)="deletePerson.emit(person)" class="btn btn-primary btn-sm">Activar</button>
             <button (click)="deletePerson.emit(person)" class="btn btn-primary btn-sm">Suspender</button>

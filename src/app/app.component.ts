@@ -12,6 +12,7 @@ import {PeopleService} from './shared/services/people.service';
 export class AppComponent {
   title = 'Hello';
   personList: Person[] = [];
+  currentPerson: Person = {};
 
   constructor (private peopleService: PeopleService) {
     this.listPerson();
@@ -37,7 +38,11 @@ export class AppComponent {
     });
   }
 
-  updatePerson () {
+  editPerson (person: Person) {
+    this.currentPerson = person;
+  }
+
+  updatePerson (person) {
     const updatePerson: Person = {
       id: 1,
       name: 'Carla 1',

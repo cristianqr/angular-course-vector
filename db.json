@@ -6,7 +6,8 @@
       "age": 18,
       "state": "Inactivo",
       "profile": "aaa a aa a a a a a a a a a a a a a a a a a  a",
-      "id": 2
+      "id": 2,
+      "check1": 0
     },
     {
       "name": "bbbbbb",

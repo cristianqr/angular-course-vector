@@ -3,11 +3,10 @@
     {
       "name": "Maria",
       "lastName": "Ramos Peralta",
-      "age": 18,
+      "age": "12",
       "state": "Inactivo",
-      "profile": "aaa a aa a a a a a a a a a a a a a a a a a  a",
-      "id": 2,
-      "check1": 0
+      "profile": "UX Designer 2",
+      "id": 2
     },
     {
       "name": "bbbbbb",

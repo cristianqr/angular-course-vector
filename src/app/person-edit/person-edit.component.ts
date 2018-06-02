@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Person} from '../models/person.model';
+import {CustomValidatorService} from '../shared/services/CustomValidatorService';
 
 @Component({
   selector: 'app-person-edit',
@@ -10,6 +11,7 @@ import {Person} from '../models/person.model';
 export class PersonEditComponent implements OnInit, OnChanges {
   personForm: FormGroup;
   @Input() person: Person;
+  @Output() updatePerson = new EventEmitter<Person>();
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -30,7 +32,7 @@ export class PersonEditComponent implements OnInit, OnChanges {
     this.personForm = this.fb.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
-      age: ['', Validators.required],
+      age: ['', [Validators.required, CustomValidatorService.ageValidator]],
       state: ['', Validators.required],
       profile: ['']
     });
@@ -47,5 +49,8 @@ export class PersonEditComponent implements OnInit, OnChanges {
     if (this.personForm.invalid) {
       return;
     }
+    console.log('exito');
+    const sendData = {...this.personForm.value, id: this.person.id};
+    this.updatePerson.emit(sendData);
   }
 }

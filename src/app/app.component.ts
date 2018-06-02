@@ -42,16 +42,7 @@ export class AppComponent {
     this.currentPerson = person;
   }
 
-  updatePerson (person) {
-    const updatePerson: Person = {
-      id: 1,
-      name: 'Carla 1',
-      lastName: 'Perez Puma',
-      age: 25,
-      state: 'activo',
-      profile: 'Programador web en joomla'
-    };
-
+  updatePerson (updatePerson: Person) {
     this.peopleService.updatePerson(updatePerson).subscribe(person => {
       this.personList = this.personList.map(item => {
         return (item.id === person.id) ? person : item;

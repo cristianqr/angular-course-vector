@@ -1,5 +1,9 @@
 <!--<app-person-new (save)="savePerson($event)"></app-person-new>-->
-<app-person-edit [person]="currentPerson"></app-person-edit>
+<app-person-edit
+  [person]="currentPerson"
+  (updatePerson)="updatePerson($event)">
+
+</app-person-edit>
 <app-person-list
   [personList]="personList"
   (deletePerson)="deletePerson($event)"

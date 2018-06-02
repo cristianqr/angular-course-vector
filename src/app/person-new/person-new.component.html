@@ -1,10 +1,10 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <div class="alert-danger">
-    <div *ngIf="name.errors?.required && name.touched" class="error">
+    <div *ngIf="name.errors?.required && (name.touched || f.submitted)" class="error">
       El nombre es un campo requerido
     </div>
 
-    <div *ngIf="lastName.errors?.required && lastName.touched" class="error">
+    <div *ngIf="lastName.errors?.required && (lastName.touched || f.submitted)" class="error">
       El Apellido es un campo requerido
     </div>
   </div>
@@ -12,7 +12,7 @@
     <div class="col-6">
       <div class="form-group">
         <label>Nombres</label>
-        <input type="text" class="form-control" name="name" ngModel #name="ngModel" required>
+        <input type="text" class="form-control" id="name" #txtName name="name" ngModel #name="ngModel" required>
 
 
       </div>
@@ -24,7 +24,7 @@
 
       <div class="form-group">
         <label>Edad</label>
-        <input type="text" class="form-control" name="age" ngModel #age="ngModel" required [class.input-error]="age.errors?.required && age.touched">
+        <input type="text" class="form-control" name="age" ngModel #age="ngModel" required [class.input-error]="age.errors?.required && (age.touched  || f.submitted)">
       </div>
 
 
@@ -40,6 +40,7 @@
 
       <div class="form-group">
         <button class="btn btn-primary">Guardar</button>
+        <button class="btn btn-primary" (click)="reset($event)">Limpiar</button>
       </div>
     </div>
   </div>

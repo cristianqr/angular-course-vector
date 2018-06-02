@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Person} from '../models/person.model';
 import {NgForm} from '@angular/forms';
 
@@ -10,20 +10,32 @@ import {NgForm} from '@angular/forms';
 export class PersonNewComponent implements OnInit {
   @Output() save = new EventEmitter<Person>();
   @ViewChild('f') form: NgForm;
-  constructor() { }
+  @ViewChild('txtName') nameElement: ElementRef;
+  nativeName;
+  constructor() {
+
+  }
 
   ngOnInit() {
+    this.nativeName = this.nameElement.nativeElement;
   }
 
   onSubmit({value, invalid}: {value: Person, invalid: boolean}) {
-    Object.keys(this.form.controls).forEach(item => {
-      this.form.controls[item]['touched'] = true;
-    });
+    // console.log('onSubmit');
+    // Object.keys(this.form.controls).forEach(item => {
+    //   this.form.controls[item]['touched'] = true;
+    // });
     if (invalid) {
       console.log('datos invalidos');
       return;
     }
     this.save.emit(value);
+  }
+
+  reset (e) {
+    e.preventDefault();
+    this.form.onReset();
+    this.nativeName.focus();
   }
 
 }

@@ -10,6 +10,9 @@ export class PeopleService {
   listPerson (): Observable<Person[]> {
     return this.http.get<Person[]>('/api/people');
   }
+  getPersonById (personId: number): Observable<Person> {
+    return this.http.get(`/api/people/${personId}`);
+  }
   savePerson(person): Observable<Person> {
     return this.http.post<Person>('/api/people', person);
   }

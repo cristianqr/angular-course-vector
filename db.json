@@ -1,7 +1,7 @@
 {
   "people": [
     {
-      "name": "Maria",
+      "name": "Mariaaaaaaa",
       "lastName": "Ramos Peralta",
       "age": "12",
       "state": "Inactivo",
@@ -33,12 +33,12 @@
       "id": 5
     },
     {
-      "name": "clauidio",
-      "lastName": "velasques",
-      "age": "21",
-      "state": "activo",
-      "profile": "backend developer",
-      "id": 6
+      "name": "ccccc",
+      "lastName": "cccccc",
+      "age": "23",
+      "state": "Activo",
+      "profile": "testing",
+      "id": 7
     }
   ]
 }

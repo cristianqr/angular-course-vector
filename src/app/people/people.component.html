@@ -1,0 +1,5 @@
+<button class="btn btn-primary" [routerLink]="['/people/new']">Nuevo</button>
+<app-person-list
+  [personList]="personList"
+  (deletePerson)="deletePerson($event)"
+  (editPerson)="editPerson($event)" ></app-person-list>
